@@ -23,6 +23,5 @@ public class Divisibleby8 {
 			return 1;
 		}
 		return 0;
-		
 	}
 }
