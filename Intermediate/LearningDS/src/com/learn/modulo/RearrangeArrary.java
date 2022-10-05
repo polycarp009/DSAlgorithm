@@ -16,7 +16,7 @@ public class RearrangeArrary {
 		System.out.println(Arrays.toString(A.toArray()));
 	}
 
-	public static void arrange(ArrayList<Integer> A) {
+	public static void arrange1(ArrayList<Integer> A) {
 //        int[] newResult = new int[A.size()];
 		int n = A.size();
 		for (int i = 0; i < n; i++) {
@@ -33,5 +33,11 @@ public class RearrangeArrary {
 		}
 		
 	}
+	
+	public static void arrange(ArrayList<Integer> A) {
+   	    int n = A.size();
+    for (int i = 0; i < n; i++) A.set(i, A.get(i) + (A.get(A.get(i)) % n) * n );
+    for (int i = 0; i < n; i++) A.set(i, A.get(i) / n);
+}
 
 }
