@@ -24,6 +24,8 @@ public class ImplementingPowFunction {
 		}
     }
 	
+	
+	
 	//Without Recursion
 	public int pow(int x, int n, int d) {
 	    long a = x;
