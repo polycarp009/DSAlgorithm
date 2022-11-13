@@ -9,7 +9,7 @@ import java.util.Map;
 public class LargestContinuousSequenceZeroSum {
 	public static void main(String[] args) {
 		int A[] = { 1,2,-3,3};
-		int B[] = { 2, 3, 1, 2 };
+//		int A[] = {  1, 2, -2, 4, -4  };
 		System.out.println(solve(A));
 		
 	}
@@ -30,12 +30,13 @@ public class LargestContinuousSequenceZeroSum {
 				if(i-hashMap.get(sum)>lenght) {
 					l=hashMap.get(sum)+1;
 					r=i;
+					System.out.println("l:"+l+" r:"+r);
 					lenght=i-hashMap.get(sum);
 			}
 			
 		}
 		}
-//		System.out.println(hashMap.toString());
+		System.out.println(hashMap.toString());
 //		if (hashMap.size() < A.length || hashMap.containsValue(0)) {
 //			return 1;
 //		}
@@ -44,7 +45,7 @@ public class LargestContinuousSequenceZeroSum {
 //		
 //	}
 		if(l >=0 && r >= 0){
-            for(int i = 1; i <= r; i++){
+            for(int i = l; i <= r; i++){
                 rst.add(A[i]);
             }
         }
