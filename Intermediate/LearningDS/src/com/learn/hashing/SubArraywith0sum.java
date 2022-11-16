@@ -12,10 +12,10 @@ public class SubArraywith0sum {
 	}
 
 	public static int solve(int[] A) {
-		HashMap<Integer, Integer> hashMap = new HashMap<>();
+		HashMap<Long, Integer> hashMap = new HashMap<>();
 //		HashSet<Integer> set = new HashSet<>();
 
-		int sum = 0;
+		Long sum = (long) 0;
 		for (int i = 0; i < A.length; i++) {
 //			System.out.println("i: " + i + "A: " + A[i]);
 			sum+= A[i];
