@@ -12,10 +12,15 @@ public class StringPatternMatching {
 
 		String A = "abababab";
 		// 2
-		System.out.println(solve(A));
+		String B = "abababab";
+		System.out.println(solve(A,B));
 	}
 
-	public static int solve(String A) {
+	public static int solve(String A,String B) {
+		
+		B = B+B;
+        String str = A+'$'+B.substring(0, B.length()-1);
+        
 		int l = 0, r = 0; // Already in segment
 		int n = A.length();
 		int Z[] = new int[n];

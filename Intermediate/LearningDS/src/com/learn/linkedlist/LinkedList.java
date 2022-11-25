@@ -16,13 +16,23 @@ public class LinkedList {
 	public static int size = 0;
 
 	public static void main(String[] args) {
+//		getLength(head);
+		insert_node(1, 14);
+		insert_node(2, 42);
+		insert_node(3, 98);
+		insert_node(4, 26);
+		insert_node(5, 36);
+		insert_node(6, 28);
+		insert_node(7, 57);
+		insert_node(8, 93);
+//		getLength(head);
+//		insert_node(2, 24);
 		getLength(head);
-		insert_node(1, 23);
-		getLength(head);
-		insert_node(2, 24);
-		getLength(head);
+		System.out.println("-------Middle of LL-------");
+		System.out.println(findMiddle(head));
 		print_ll();
-		delete_node(1);
+		
+//		delete_node(1);
 		getLength(head);
 		print_ll();
 	}
@@ -86,6 +96,18 @@ public class LinkedList {
 			temp = temp.next;
 		}
 		System.out.println(temp.data);
+	}
+	
+	public static int findMiddle(LinkedList A) {
+		if (A == null) // if head is null edge case return null
+			return 0;
+
+		LinkedList slow = A, fast = A;
+		while (fast != null && fast.next != null) {
+			slow = slow.next;
+			fast = fast.next.next;
+		}
+		return slow.data;
 	}
 
 }
