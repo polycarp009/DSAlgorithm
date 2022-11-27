@@ -28,9 +28,16 @@ public class LinkedList {
 //		getLength(head);
 //		insert_node(2, 24);
 		getLength(head);
-		System.out.println("-------Middle of LL-------");
-		System.out.println(findMiddle(head));
+//		System.out.println("-------Middle of LL-------");
+//		System.out.println(findMiddle(head));
 		print_ll();
+		System.out.println("---------Reversed LL-----------");
+		head=reverseLL(head);
+		print_ll();
+		System.out.println("---------Reversed LL-----------");
+//		System.out.println("-------Middle of Deletion-------");
+//		System.out.println(deleteMiddle(head));
+//		print_ll();
 		
 //		delete_node(1);
 		getLength(head);
@@ -56,7 +63,7 @@ public class LinkedList {
 		if (position == 1) {
 			newNode.next = null;
 			head = newNode;
-			System.out.println("Node 1:" + newNode.data);
+//			System.out.println("Node 1:" + newNode.data);
 		} else {
 			LinkedList temp = head;
 			int c = 0;
@@ -66,8 +73,8 @@ public class LinkedList {
 
 			}
 			newNode.next = temp.next;
-			System.out.println("pos" + position);
-			System.out.println("Node " + position + ":" + newNode.data);
+//			System.out.println("pos" + position);
+//			System.out.println("Node " + position + ":" + newNode.data);
 			temp.next = newNode;
 		}
 		System.out.println(size);
@@ -86,6 +93,28 @@ public class LinkedList {
 			temp.next = temp.next.next;
 		}
 		size--;
+	}
+	
+	public static LinkedList deleteMiddle(LinkedList A) {
+		if (A == null) // if head is null edge case return null
+			return A;
+
+		LinkedList slow = A, fast = A,prev=A;
+		  if(fast.next == null){ // only one node case
+	            return null;
+	        }
+
+		
+		//fast != null && fast.next != null  use for getting the second middle
+		while (fast!= null && fast.next != null) {
+			prev=slow;
+			slow = slow.next;
+			fast = fast.next.next;
+			
+		}
+		prev.next=slow.next;
+		slow.next=null;
+		return A;
 	}
 
 	public static void print_ll() {
@@ -108,6 +137,20 @@ public class LinkedList {
 			fast = fast.next.next;
 		}
 		return slow.data;
+	}
+	
+	public static LinkedList reverseLL(LinkedList A) {
+		
+		LinkedList temp=null,curr=A,prev=null;
+		while(curr!=null) {
+			temp=curr.next;
+			curr.next=prev;
+			prev=curr;
+			curr=temp;
+		}
+		A=prev;
+		return A;
+		
 	}
 
 }
