@@ -1,5 +1,6 @@
 package com.learn.string;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class ReverseSentenceWordbyWord {
@@ -10,6 +11,8 @@ public class ReverseSentenceWordbyWord {
 	public static String solve(String A) {
 		String[] words = A.split(" ");
 		int N=words.length;
+		ArrayList<String> list = new ArrayList<>();
+		list.add("");
 //		for (int i = 0; i < words.length; i++) {
 //			String temp= words[i];
 //			words[i]=words[words.length-1-i];
@@ -25,5 +28,6 @@ public class ReverseSentenceWordbyWord {
 			}
 		}
 		return str.toString();
+		
 	}
 }
