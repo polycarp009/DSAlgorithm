@@ -37,7 +37,7 @@ public class LargestRectangleinHistogram {
 		}
 		
 		st1.clear();
-		System.out.println("LSmall: "+Arrays.toString(lsmall));
+//		System.out.println("LSmall: "+Arrays.toString(lsmall));
 		for (int i = len-1; i >=0 ; i--) {
 		
 			while (!st1.isEmpty() && A[st1.peek()] >= A[i]) {
@@ -51,7 +51,7 @@ public class LargestRectangleinHistogram {
 			
 			st1.push(i);
 		}
-		System.out.println("RSmall: "+Arrays.toString(rsmall));
+//		System.out.println("RSmall: "+Arrays.toString(rsmall));
 		for (int i = 0; i < A.length; i++) {
 			curans = A[i] * (rsmall[i] - lsmall[i] - 1);
 			ans = Math.max(ans, curans);

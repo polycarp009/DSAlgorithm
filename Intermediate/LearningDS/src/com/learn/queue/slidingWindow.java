@@ -14,10 +14,12 @@ public class slidingWindow {
 			Deque<Integer> deque = new ArrayDeque();
 
 			for (int window_end = 0; window_end < A.length; window_end++) {
+				
+				//delete the less elemt from queue
 				while (!deque.isEmpty() && deque.peekLast() < A[window_end]) {
 					deque.pollLast();
 				}
-
+//add to dequeuw
 				deque.offerLast(A[window_end]);
 
 				if (window_end - window_start + 1 >= B) {

@@ -24,6 +24,7 @@ public class RearrangeArrary {
 		}
 		for (int i = 0; i < n; i++) {
 			int index = A.get(i) / n;
+			//old value= A.get(index)/n;
 			int newValue = A.get(index) / n;
 			A.set(i, A.get(i) + newValue);
 		}
